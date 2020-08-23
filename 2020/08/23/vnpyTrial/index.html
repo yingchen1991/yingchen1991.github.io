@@ -20,14 +20,17 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="article">
-<meta property="og:title" content="vnpy策略开发试验">
+  <meta name="description" content="摘要：本次试验尝试采用vnpy量化交易系统进行简单的策略开发。本次试验选择最简单的双均线策略作为目标，试验目的是熟悉vnpy的策略开发模块的框架，熟悉使用vnpy进行策略开发的流程，并进行一次实践。 试验环境 Ubuntu 18.04，Python 3.8，vnpy2.1.4，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vnpy量化策略开发试验">
 <meta property="og:url" content="http://yoursite.com/2020/08/23/vnpyTrial/index.html">
 <meta property="og:site_name" content="YingChen">
+<meta property="og:description" content="摘要：本次试验尝试采用vnpy量化交易系统进行简单的策略开发。本次试验选择最简单的双均线策略作为目标，试验目的是熟悉vnpy的策略开发模块的框架，熟悉使用vnpy进行策略开发的流程，并进行一次实践。 试验环境 Ubuntu 18.04，Python 3.8，vnpy2.1.4，">
 <meta property="og:locale">
 <meta property="article:published_time" content="2020-08-23T12:02:27.000Z">
-<meta property="article:modified_time" content="2020-08-23T12:03:14.735Z">
+<meta property="article:modified_time" content="2020-08-23T14:17:00.127Z">
 <meta property="article:author" content="YingChen">
+<meta property="article:tag" content="vnpy 量化策略">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2020/08/23/vnpyTrial/">
@@ -43,7 +46,7 @@
   };
 </script>
 
-  <title>vnpy策略开发试验 | YingChen</title>
+  <title>vnpy量化策略开发试验 | YingChen</title>
   
 
 
@@ -186,7 +189,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          vnpy策略开发试验
+          vnpy量化策略开发试验
         </h1>
 
         <div class="post-meta">
@@ -197,7 +200,16 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-08-23 20:02:27 / Modified: 20:03:14" itemprop="dateCreated datePublished" datetime="2020-08-23T20:02:27+08:00">2020-08-23</time>
+              <time title="Created: 2020-08-23 20:02:27 / Modified: 22:17:00" itemprop="dateCreated datePublished" datetime="2020-08-23T20:02:27+08:00">2020-08-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/" itemprop="url" rel="index"><span itemprop="name">量化交易</span></a>
+                </span>
             </span>
 
           
@@ -211,7 +223,76 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <p><strong>摘要</strong>：本次试验尝试采用vnpy量化交易系统进行简单的策略开发。本次试验选择最简单的双均线策略作为目标，试验目的是熟悉vnpy的策略开发模块的框架，熟悉使用vnpy进行策略开发的流程，并进行一次实践。</p>
+<p>试验环境 Ubuntu 18.04，Python 3.8，vnpy2.1.4，</p>
+<a id="more"></a>
+
+<h1 id="策略模板"><a href="#策略模板" class="headerlink" title="策略模板"></a>策略模板</h1><p>一般来说，交易策略的思路主要来源于两个方向：第一，实盘中的交易经验总结；第二，数据挖掘、统计分析得到的规律。二者可以相互结合。</p>
+<p>在vnpy框架下，策略模板是具体交易策略的基础，一般把大部分策略都用到的方法和公共变量放到策略模板里，而具体策略继承该策略模板进而增加个性方法和变量（如：入场价格，止损止盈）。一般可在最基础模板上，按照交易策略的类型衍生出交易类型模板（如：CTA、套利、对冲等），具体交易策略继承衍生的交易类型模板进行开发。</p>
+<p><strong>一个常见的错误</strong></p>
+<p>先了解一个开发中常见的错误：</p>
+<p>Python中的对象分为可变对象（如dict、list等数据容器）以及不可变对象（如str、int等数据类型），在<code>__init__</code>之上定义的可变对象变量在实例初始化的时候会直接指向该类的同名变量，导致多个实例间共享里同一个数据容器，也就会导致各种诡异的出错情况。</p>
+<p>为了解决这个问题，请将所有可变变量的定义（尤其是list、dict等数据容器），放到<code>__init__</code>函数中（不要放在类的成员定义中）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 错误用法</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestStrategy</span>(<span class="params">CtaTemplate</span>):</span></span><br><span class="line">  <span class="string">&quot;&quot;&quot;CTA策略模板&quot;&quot;&quot;</span></span><br><span class="line">  ...</span><br><span class="line">  <span class="comment"># 这里定义的变量是类成员，方便引擎在创建策略对象前了解一些信息</span></span><br><span class="line">  barList = []     <span class="comment"># 若基于TestStrategy类创建多个策略对象，他们的barList都会指向同一个列表，导致出错</span></span><br><span class="line">  lastPrice = <span class="number">0</span> <span class="comment"># 数字（int, float）在Python中属于不可变对象，因此每个策略的lastPrice互不影响</span></span><br><span class="line">  <span class="comment">#-----------------</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, ctaEngine, setting</span>):</span></span><br><span class="line">    super(TestStrategy, self).__init__(ctaEngine, setting)</span><br><span class="line"><span class="comment">##----------------------------------------------------------------</span></span><br><span class="line"><span class="comment">#正确用法</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestStrategy</span>(<span class="params">CtaTemplate</span>):</span></span><br><span class="line">  <span class="string">&quot;&quot;&quot;CTA策略模板&quot;&quot;&quot;</span></span><br><span class="line">  ...</span><br><span class="line">  <span class="comment"># 这里定义的变量是类成员，方便引擎在创建策略对象前了解一些信息</span></span><br><span class="line">  barList = []</span><br><span class="line">  lastPrice = <span class="number">0</span></span><br><span class="line">  <span class="comment">#----------------</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, ctaEngine, setting</span>):</span></span><br><span class="line">    super(TestStrategy, self).__init__(ctaEngine, setting)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 这里定义的变量是对象创建后自身独有的成员</span></span><br><span class="line">    self.barList = []     <span class="comment"># 在这里对barList重新初始化，指向一个新建的独立列表</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="策略开发"><a href="#策略开发" class="headerlink" title="策略开发"></a>策略开发</h1><p>CTA策略模板提供完整的信号生成和委托管理功能，用户可以基于该模板自行开发策略。为了方便策略管理，新策略可存放的位置，<strong>在本次试验中，为<code>$HOME</code>目录以及<code>$HOME/miniconda3/lib/python3.8/site-packages/vnpy/app/cta_strategy/strategies/</code></strong>(根据vnpy官方文档说明应该是<code>$HOME/.vntrader/strategies</code>以及<code>vnpyRoot/vnpy/app/cta_strategy/strategies/</code>路径下，但本次试验发现无效)。可能是系统做了特殊配置修改(ref.3)。</p>
+<p>注意：策略文件命名是以下划线模式如<code>boll_channel_strategy.py</code>；而策略类命名采用的是驼峰式命名，如：<code>BollChannelStrategy</code>。</p>
+<p>如下vnpy框架下策略开发的大致步骤，</p>
+<p><strong>创建策略文件并定义策略类</strong></p>
+<p>在相应的strategies目录中新建策略文件：<code>demo_strategy.py</code></p>
+<p>添加策略类</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> vnpy.app.cta_strategy <span class="keyword">import</span> (</span><br><span class="line">    CtaTemplate,</span><br><span class="line">    StopOrder,</span><br><span class="line">    TickData,</span><br><span class="line">    BarData,</span><br><span class="line">    TradeData,</span><br><span class="line">    OrderData,</span><br><span class="line">    BarGenerator,</span><br><span class="line">    ArrayManager,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DemoStrategy</span>(<span class="params">CtaTemplate</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;演示用的简单双均线&quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># 策略作者</span></span><br><span class="line">    author = <span class="string">&quot;Smart Trader&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 定义参数</span></span><br><span class="line">    fast_window = <span class="number">10</span></span><br><span class="line">    slow_window = <span class="number">20</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 定义变量</span></span><br><span class="line">    fast_ma0 = <span class="number">0.0</span></span><br><span class="line">    fast_ma1 = <span class="number">0.0</span></span><br><span class="line">    slow_ma0 = <span class="number">0.0</span></span><br><span class="line">    slow_ma1 = <span class="number">0.0</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 添加参数和变量名到对应到列表</span></span><br><span class="line">    parameters = [<span class="string">&quot;fast_window&quot;</span>, <span class="string">&quot;slow_window&quot;</span>]</span><br><span class="line">    variables = [<span class="string">&quot;fast_ma0&quot;</span>, <span class="string">&quot;fast_ma1&quot;</span>, <span class="string">&quot;slow_ma0&quot;</span>, <span class="string">&quot;slow_ma1&quot;</span>]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, cta_engine, strategy_name, vt_symbol, setting</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;&quot;&quot;&quot;</span></span><br><span class="line">        super().__init__(cta_engine, strategy_name, vt_symbol, setting)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># K线合成器：从Tick合成分钟K线用</span></span><br><span class="line">        self.bg = BarGenerator(self.on_bar)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 时间序列容器：计算技术指标用</span></span><br><span class="line">        self.am = ArrayManager()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">on_init</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        当策略被初始化时调用该函数</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment"># 输出日志信息，下同</span></span><br><span class="line">        self.write_log(<span class="string">&quot;策略初始化&quot;</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 加载10天的历史数据用于初始化回放</span></span><br><span class="line">        self.load_bar(<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">on_start</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        当策略被启动时调用该函数</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        self.write_log(<span class="string">&quot;策略启动&quot;</span>)</span><br><span class="line">        <span class="comment"># 通知图形界面更新(策略最新状态)</span></span><br><span class="line">        <span class="comment"># 不调用该函数则界面不会变化</span></span><br><span class="line">        self.put_event()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">on_stop</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        当策略被停止时调用该函数</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        self.write_log(<span class="string">&quot;策略停止&quot;</span>)</span><br><span class="line"></span><br><span class="line">        self.put_event()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">on_tick</span>(<span class="params">self, tick: TickData</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        通过该函数收到Tick推送</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        self.bg.update_tick(tick)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">on_bar</span>(<span class="params">self, bar: BarData</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        通过该函数收到新的1分钟K线推送</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        am = self.am</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 更新K线到时间序列容器中</span></span><br><span class="line">        am.update_bar(bar)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 若缓存的K线数量尚不够计算技术指标，则直接返回</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> am.inited:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 计算快速均线</span></span><br><span class="line">        fast_ma = am.sma(self.fast_window, array=<span class="literal">True</span>)</span><br><span class="line">        self.fast_ma0 = fast_ma[<span class="number">-1</span>]    <span class="comment"># T时刻数值</span></span><br><span class="line">        self.fast_ma1 = fast_ma[<span class="number">-2</span>]    <span class="comment"># T-1时刻数值</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 计算慢速均线</span></span><br><span class="line">        slow_ma = am.sma(self.slow_window, array=<span class="literal">True</span>)</span><br><span class="line">        self.slow_ma0 = slow_ma[<span class="number">-1</span>]</span><br><span class="line">        self.slow_ma1 = slow_ma[<span class="number">-2</span>]</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 判断是否金叉</span></span><br><span class="line">        cross_over = (self.fast_ma0 &gt; self.slow_ma0 <span class="keyword">and</span> </span><br><span class="line">                        self.fast_ma1 &lt; self.slow_ma1)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 判断是否死叉</span></span><br><span class="line">        cross_below = (self.fast_ma0 &lt; self.slow_ma0 <span class="keyword">and</span> </span><br><span class="line">                        self.fast_ma1 &gt; self.slow_ma1)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 如果发生了金叉</span></span><br><span class="line">        <span class="keyword">if</span> cross_over:</span><br><span class="line">            <span class="comment"># 为了保证成交，在K线收盘价上加5发出限价单</span></span><br><span class="line">            price = bar.close_price + <span class="number">5</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># 当前无仓位，则直接开多</span></span><br><span class="line">            <span class="keyword">if</span> self.pos == <span class="number">0</span>:</span><br><span class="line">                self.buy(price, <span class="number">1</span>)</span><br><span class="line">            <span class="comment"># 当前持有空头仓位，则先平空，再开多</span></span><br><span class="line">            <span class="keyword">elif</span> self.pos &lt; <span class="number">0</span>:</span><br><span class="line">                self.cover(price, <span class="number">1</span>)</span><br><span class="line">                self.buy(price, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 如果发生了死叉</span></span><br><span class="line">        <span class="keyword">elif</span> cross_below:</span><br><span class="line">            price = bar.close_price - <span class="number">5</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># 当前无仓位，则直接开空</span></span><br><span class="line">            <span class="keyword">if</span> self.pos == <span class="number">0</span>:</span><br><span class="line">                self.short(price, <span class="number">1</span>)</span><br><span class="line">            <span class="comment"># 当前持有多头仓位，则线平多，再开空</span></span><br><span class="line">            <span class="keyword">elif</span> self.pos &gt; <span class="number">0</span>:</span><br><span class="line">                self.sell(price, <span class="number">1</span>)</span><br><span class="line">                self.short(price, <span class="number">1</span>)</span><br><span class="line">        </span><br><span class="line">        self.put_event()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">on_order</span>(<span class="params">self, order: OrderData</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        通过该函数收到委托状态更新推送</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">on_trade</span>(<span class="params">self, trade: TradeData</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        通过该函数收到成交推送</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment"># 成交后策略逻辑仓位发生变化，需要通知界面更新</span></span><br><span class="line">        self.put_event()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">on_stop_order</span>(<span class="params">self, on_stop_order: StopOrder</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        通过该函数收到本地停止推送</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<p>在文件头部我们的一系列import中最重要的是CtaTemplate，这就是我们开发CTA策略所用的策略模板基类，策略模板提供了一系列以on_开头的回调函数，用于接受事件推送，以及其他主动函数用于执行操作（如委托、撤单、纪录日志等）。</p>
+<p>所有开发等策略类，都必须继承CtaTemplate基类，然后在需要的回调函数中实现策略逻辑，即当某件事情发生时我们需要执行的对应操作。</p>
+<p><strong>参数及变量</strong></p>
+<p>在vnpy框架下，所有量化交易策略必然都会涉及到参数和变量这两个概念</p>
+<p><strong>参数</strong>是策略内部的逻辑算法中用来控制结果输出的一些数值，在策略类中需要定义出这些参数的默认值：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">fast_window = <span class="number">10</span></span><br><span class="line">slow_window = <span class="number">20</span></span><br><span class="line"><span class="comment"># 并将参数名称添加到parameters列表中</span></span><br><span class="line">parameters = [<span class="string">&quot;fast_window&quot;</span>, <span class="string">&quot;slow_window&quot;</span>]</span><br><span class="line"><span class="comment"># 这一步操作是为了让系统内到策略引擎，得以知道该则略有哪些参数，</span></span><br><span class="line"><span class="comment"># 并在初始化策略时弹出相应的对话框让用户填写，</span></span><br><span class="line"><span class="comment"># 或在命令行模式下直接将配置字典中对应的key和value赋值到策略变量上</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>变量</strong>则是策略内部的逻辑算法在执行过程中用来<em>缓存中间状态</em>的一些数值，在策略类中同样需要定义这些变量的默认数值：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">fast_ma0 = <span class="number">0.0</span></span><br><span class="line">fast_ma1 = <span class="number">0.0</span></span><br><span class="line">slow_ma0 = <span class="number">0.0</span></span><br><span class="line">slow_ma1 = <span class="number">0.0</span></span><br><span class="line"><span class="comment"># 并将这些变量名称添加到variables列表中</span></span><br><span class="line">variables = [<span class="string">&quot;fast_ma0&quot;</span>, <span class="string">&quot;fast_ma1&quot;</span>, <span class="string">&quot;slow_ma0&quot;</span>, <span class="string">&quot;slow_ma1&quot;</span>]</span><br><span class="line"><span class="comment"># 这一步操作是为了让系统内到策略引擎，得以知道该策略有哪些变量，</span></span><br><span class="line"><span class="comment"># 并在GUI图形界面上更新策略状态时将这些变量的最新数值显示出来，</span></span><br><span class="line"><span class="comment"># 同时在保存策略运行状态到缓存文件时将这些变量写入进去</span></span><br><span class="line"><span class="comment"># （实盘中每天关闭策略时会自动缓存）。</span></span><br></pre></td></tr></table></figure>
+
+<p>需要注意的是：</p>
+<blockquote>
+<ol>
+<li>无论变量还是参数，都必须定义在策略类中，而非策略的<code>__init__</code>函数中</li>
+<li>参数和变量，均只支持Python中的四种基础数据类型：str, int, float, bool, 使用其他类型会导致各种出错（尤其注意不要使用list，dict等容器）</li>
+<li>如果在策略逻辑中，确实需要使用list，dict之类的容器用于数据缓存，<strong>请在<code>__init__</code>函数中创建这些容器</strong></li>
+</ol>
+</blockquote>
+<p><strong>交易逻辑实现</strong></p>
+<p>在vn.py的CTA策略模块中，所有策略逻辑都是由事件来驱动的。例如：</p>
+<ul>
+<li>策略被执行初始化操作，会收到on_init函数的调用，此时可以加载历史数据，来进行技术指标的初始化运算</li>
+<li>新一根1分钟K线走完时，会收到on_bar函数的调用，参数为该根K线对象的BarData</li>
+<li>策略发出委托，状态发生变化时，会收到on_order函数的调用，参数为该委托的最新状态OrderData</li>
+</ul>
+<p>对于双均线策略来说，只需要在收到K线推送时(on_bar函数中)执行交易相关的逻辑判断即可。</p>
+<p>每次新的一根K线走完时，策略会通过on_bar函数收到该根K线的数据推送。注意此时收到的数据只有该K线，但大部分技术指标计算都需要过去N个周期的历史数据。</p>
+<p>所以为了计算均线技术指标，我们需要使用一个叫做时间序列容器ArrayManager对象，用于实现了K线历史的缓存和技术指标计算，该对象的创建，在策略的<code>__init__</code>函数中</p>
+<p>在on_bar函数的逻辑中，第一步需要将K线对象推送到该时间序列容器中</p>
+<p>为了满足技术指标计算的需求，我们通常需要最少N根K线的缓存（N默认为100），在推送进ArrayManager对象的数据不足N之前，是无法计算出需要的技术指标的，对于缓存数据是否已经足够的判断，通过am.inited变量可以很方便的判断出，在inited变为True之前，都应该只是缓存数据而不进行任何其他的操作。</p>
+<p>当缓存的数据量满足需求后，可以通过am.sma函数来计算均线指标的数值</p>
+<p>传入可选参数array=True，因此返回的fast_ma为最新移动平均线的数组，其中最新一个周期（T时刻）的移动均线ma数值可以通过-1下标获取，上一个周期（T-1时刻）的ma数值可以通过-2下标获取。</p>
+<p>有了快慢两根均线在T时刻和T-1时刻的数值后，我们就可以进行双均线策略的核心逻辑判断，即是否发生了均线金叉或者死叉：</p>
+<p>所谓均线金叉，是指T-1时刻的快速均线fast_ma1低于慢速均线slow_ma1，而T时刻时快速均线fast_ma0大于或等于慢速均线slow_ma0，实现了上穿行为（即金叉）。均线死叉则是相反的情形。</p>
+<p>当金叉或者死叉发生后，则需要执行相应的交易操作：</p>
+<p>对于简单双均线策略来说，处于持仓状态中，金叉后拿多仓，死叉后拿空仓。</p>
+<p>所以当金叉发生时，我们需要检查当前持仓的情况。如果没有持仓（self.pos==0)，说明此时策略刚开始交易，则应该直接执行多头开仓（buy）。如果此时已经持有空头仓位，则应该先执行空头平仓操作（cover）然后同时立即执行多头开仓（buy）。为了保证成交（简化策略），在下单时选择了加价 的方式来实现（多头+5，空头-5）</p>
+<p>K线合成</p>
+<p>DemoStrategy的双均线交易逻辑，可以通过超价买卖的方式来保证成交，从而忽略撤单、委托更新、成交推送之类更加细节的事件驱动逻辑。</p>
+<p>但在实盘时，任何交易系统（不管是期货CTP，还是数字货币BITMEX等）都只会推送最新的Tick更新数据，而不会有完整的K线推送，因此用户需要自行在本地完成K线的合成逻辑</p>
+<p>vnpy中可使用K线合成工具BarGenerator来实现。</p>
+<p>参考资料</p>
+<ol>
+<li>CTA策略模块策略开发，<code>[https://github.com/vnpy/vnpy/wiki/CTA%E7%AD%96%E7%95%A5%E6%A8%A1%E5%9D%97%E7%AD%96%E7%95%A5%E5%BC%80%E5%8F%91](https://github.com/vnpy/vnpy/wiki/CTA策略模块策略开发)</code></li>
+<li>vn.py 1.x 开发手册（项目文档）策略开发，<code>https://www.bookstack.cn/read/vnpy/spilt.3.64caaaef7c5fb2e1.md</code></li>
+<li>vn.py快速入门6 - 开发第一个量化策略， <code>https://zhuanlan.zhihu.com/p/76383301</code></li>
+</ol>
+
     </div>
 
     
@@ -219,6 +300,9 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/vnpy-%E9%87%8F%E5%8C%96%E7%AD%96%E7%95%A5/" rel="tag"># vnpy 量化策略</a>
+          </div>
 
         
 
@@ -229,7 +313,10 @@
     <a href="/2020/08/16/%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" rel="prev" title="使用Hexo搭建博客">
       <i class="fa fa-chevron-left"></i> 使用Hexo搭建博客
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/08/23/hello-world/" rel="next" title="Hello World">
+      Hello World <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -288,6 +375,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AD%96%E7%95%A5%E6%A8%A1%E6%9D%BF"><span class="nav-number">1.</span> <span class="nav-text">策略模板</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AD%96%E7%95%A5%E5%BC%80%E5%8F%91"><span class="nav-number">2.</span> <span class="nav-text">策略开发</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -310,13 +398,13 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
