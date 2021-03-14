@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://chenying.com/categories/</loc>
+    <lastmod>2021-03-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chenying.com/</loc>
+    <lastmod>2021-03-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chenying.com/post/</loc>
+    <lastmod>2021-03-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chenying.com/tags/tag1/</loc>
+    <lastmod>2021-03-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chenying.com/tags/tag2/</loc>
+    <lastmod>2021-03-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chenying.com/tags/</loc>
+    <lastmod>2021-03-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chenying.com/categories/tech/</loc>
+    <lastmod>2021-03-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chenying.com/post/2021-03-07-talk-about-architect/</loc>
+    <lastmod>2021-03-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chenying.com/post/my_first-post/</loc>
+    <lastmod>2020-08-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chenying.com/search/placeholder/</loc>
+  </url>
+  
+  <url>
+    <loc>https://chenying.com/top/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://chenying.com/top/books/</loc>
+  </url>
+  
+  <url>
+    <loc>https://chenying.com/search/</loc>
+  </url>
+  
+  <url>
+    <loc>https://chenying.com/top/</loc>
+  </url>
+  
+</urlset>

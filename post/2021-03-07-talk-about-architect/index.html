@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="ChenYing Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://chenying.com/img/home-bg-jeep.jpg">
+    <meta property="twitter:image" content="https://chenying.com/img/home-bg-jeep.jpg" />
+    
+
+    
+    <meta name="title" content="漫谈职业发展规划" />
+    <meta property="og:title" content="漫谈职业发展规划" />
+    <meta property="twitter:title" content="漫谈职业发展规划" />
+    
+
+    
+    <meta name="description" content="陈英，程序员, 开源爱好者，生活探险家 | 这里是 陈英 的博客，与你一起发现更大的世界。">
+    <meta property="og:description" content="陈英，程序员, 开源爱好者，生活探险家 | 这里是 陈英 的博客，与你一起发现更大的世界。" />
+    <meta property="twitter:description" content="陈英，程序员, 开源爱好者，生活探险家 | 这里是 陈英 的博客，与你一起发现更大的世界。" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="陈英, chenying, ChenYing, , 陈英的网络日志, 陈英的博客, ChenYing Blog, 博客, 个人网站, 互联网, Web, 云原生, PaaS, Istio, Kubernetes, 微服务, Microservice">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>漫谈职业发展规划-陈英的博客 | ChenYing Blog</title>
+
+    <link rel="canonical" href="/post/2021-03-07-talk-about-architect/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">ChenYing Blog</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/tech">tech</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/books/">BOOKS</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search">SEARCH <img src="/img/search.png" height="15" style="cursor: pointer;" alt="Search"></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-jeep.jpg')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/tag1" title="tag1">
+                            tag1
+                        </a>
+                        
+                        <a class="tag" href="/tags/tag2" title="tag2">
+                            tag2
+                        </a>
+                        
+                    </div>
+                    <h1>漫谈职业发展规划</h1>
+                    <h2 class="subheading">对架构师方向的思考</h2>
+                    <span class="meta">
+                        Posted by 
+                        
+                                 &#34;ChenYing&#34;
+                         
+                        on 
+                        Sunday, March 7, 2021
+                        
+                        
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <header>
+                    <h2>TOC</h2>
+                </header>
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#摘要">摘要</a></li>
+    <li><a href="#架构师技能发展路线">架构师技能发展路线</a></li>
+    <li><a href="#架构师的分类">架构师的分类</a></li>
+    <li><a href="#架构师的职责">架构师的职责</a></li>
+    <li><a href="#架构师的必备技能">架构师的必备技能</a>
+      <ul>
+        <li><a href="#设计design">设计（Design）</a></li>
+        <li><a href="#决策decide">决策（Decide）</a></li>
+        <li><a href="#简化simplify">简化（Simplify）</a></li>
+        <li><a href="#编码code">编码（Code）</a></li>
+        <li><a href="#文档document">文档（Document）</a></li>
+        <li><a href="#沟通communicate">沟通（Communicate）</a></li>
+        <li><a href="#评估estimate-and-evaluate">评估（Estimate and Evaluate）</a></li>
+        <li><a href="#平衡balance">平衡（Balance）</a></li>
+        <li><a href="#咨询consult-and-coach">咨询（Consult and Coach）</a></li>
+        <li><a href="#营销market">营销（Market）</a></li>
+      </ul>
+    </li>
+    <li><a href="#参考资料">参考资料</a></li>
+  </ul>
+</nav>
+                
+                <h1 id="摘要">摘要</h1>
+<p>通常来说软件架构师与现实生活的架构师很像。他要负责制定高层次的设计决策。</p>
+<p>本文的目标是对软件工程师提升为软件架构师所需要的技能做一个粗略的概述。这里不存在所需的理想技能，而仅仅是一个发展规划，以强调需要获得的主要技能。</p>
+<h1 id="架构师技能发展路线">架构师技能发展路线</h1>
+<p>1）首先，需要加强你的软件工程基础</p>
+<p>整洁的架构</p>
+<p>SOLID 原则</p>
+<p>2）学习设计模式，在工程师道路上可以解决大部分的问题</p>
+<p>3）学习TDD（测试驱动开发）</p>
+<p>尝试通过创建一个可以实现TDD角色的小项目来学习TDD。使用TDD编写代码将使您学会如何编写更好的、干净的、可测试的代码。尝试在TDD中实现小的包/项目</p>
+<p>4）学习开源项目</p>
+<p>阅读其他代码是学习如何编写干净代码的最好方法。如果你是一个开源开发者，你可以查看你喜欢的框架的代码库。您甚至可以开始研究您经常使用的包的代码。在这一步，GitHub应该是你的浏览器历史上最开放的网站</p>
+<p>5）尝试编写单元测试/重构代码</p>
+<p>为旧的未覆盖代码库编写单元测试。在这一步，您可以选择一个旧的项目，并尝试为它编写单元测试。当然，您会发现许多函数/类根本就不是可测试的，在这里开始检测这些区域并开始重构它。</p>
+<p>6）开始向开源项目提交代码</p>
+<p>这可以通过多种方式实现:</p>
+<p>a. 你可以从在GitHub上探索你喜欢的包开始，你会发现一些由社区造成的问题。努力贡献并解决这些问题。</p>
+<p>b. 您可以检查代码中的一些改进，并开始应用一些增强功能</p>
+<p>c. 你可以编写更多的单元测试并提高代码覆盖率</p>
+<p>7）加入一个真正关心软件工程和代码质量的团队</p>
+<p>在这一步，您需要加入一个至少有一位优秀架构师的团队，以帮助您/检查您的代码。永远记住“建筑是通过实践学习的”，这一步中最困难的部分是获得周围人的信任，让你领导项目的设计和实施。</p>
+<p>8）学习架构模式</p>
+<blockquote>
+<p>microservices</p>
+<p>service oriented architecture</p>
+<p>layered architecture</p>
+<p>domain driven</p>
+<p>client/server</p>
+<p>MVC</p>
+</blockquote>
+<p>9）通信模式</p>
+<blockquote>
+<p>message stream processing</p>
+<p>event sourcing</p>
+<p>pub/sub</p>
+<p>remote procedure call (RPC)</p>
+<p>Enterprise service bus</p>
+</blockquote>
+<p>10）软件设计图表</p>
+<blockquote>
+<p>UML</p>
+<p>sequence diagram</p>
+<p>ERD</p>
+<p>data flow diagram</p>
+<p>interaction diagram</p>
+<p>class diagram</p>
+</blockquote>
+<h1 id="架构师的分类">架构师的分类</h1>
+<p>软件架构师大体可以划分为三个抽象层级，不同层级对架构师的必要技能要求不一样。</p>
+<ul>
+<li><strong>应用级(Application Level)</strong>：最低层级的架构师，关注单个应用程序。注重非常详细，低层次的设计。沟通范围通常仅限于单一开发团队。</li>
+<li><strong>解决方案级别(Solution Level)</strong>：中间层级的架构师。聚焦于满足业务需求（业务解决方案）的一个或多个应用程序。进行一些高层级，但主要是低层级的设计。沟通范围在多个开发团队之间。</li>
+<li><strong>企业级(Enterprise Level)</strong>：最高层级的架构师。聚焦于多种解决方案。进行高层次的抽象设计，需要由解决方案级别或应用程序级别架构师对其设计进行细化。沟通范围跨越整个组织。</li>
+</ul>
+<h1 id="架构师的职责">架构师的职责</h1>
+<p>要考虑架构师所需要的技能，我们首先需要了解架构师所要参与的活动：</p>
+<p>1）定义和决定开发技术和平台</p>
+<p>2）定义开发标准，即，编码标准，工具，审查过程，测试方法等。</p>
+<p>3）支持识别和理解业务需求</p>
+<p>4）根据需求设计系统并采取决策</p>
+<p>5）对架构定义，设计和决策进行文档化并沟通</p>
+<p>6）检查评审架构以及代码，检查定义模式以及编码标准是否正确实施</p>
+<p>7）与其他架构师及相关方进行合作</p>
+<p>8）向开发提供指导及咨询</p>
+<p>9）将高层设计细化为底层设计</p>
+<p>注意：架构是一种持续的活动，尤其是在敏捷软件开发中。因此，这些活动要一遍一遍的执行</p>
+<h1 id="架构师的必备技能">架构师的必备技能</h1>
+<p>为了支持实际工作活动的需求，架构师必须具备特定的技能。根据前人的经验，阅读的书籍以及讨论，如下总结了一个架构师应该具备的事项重要技能：</p>
+<ul>
+<li>设计（Design）</li>
+<li>决策（Decide）</li>
+<li>简化（Simplify）</li>
+<li>编码（Code）</li>
+<li>文档（Document）</li>
+<li>沟通（Communicate）</li>
+<li>评估（Estimate）</li>
+<li>平衡（Balance）</li>
+<li>顾问（Consult）</li>
+<li>营销（Market）</li>
+</ul>
+<h2 id="设计design">设计（Design）</h2>
+<p>如何才能做出好的设计？这可能是最重要且最具挑战的问题。需要把理论和实践区分开来。从经验来看，将两者结合会更有价值</p>
+<p>1）掌握基本的设计模式：模式是架构师开发可维护系统所需的最重要的工具之一。通过模式，你可以重用经过验证的设计解决方案来解决常见的问题。《设计模式-可重用的面向对象软件元素》这本书是每个从事软件开发的人的必读书籍。尽管这些模式早在20多年前就已经发布，但它们仍然是现代软件架构的基础</p>
+<p>2）深入挖掘模式和反模式: 如果你已经很熟悉四人帮的模式，然后用更多的软件设计模式扩展你的知识，或深入挖掘你感兴趣的领域。关于应用集成推荐一本书，《Enterprise Integration Patterns》</p>
+<p>3）掌握质量措施：定义架构并不是工作的结束。这就是为什么需要定义，应用并管控指导手册以及编码标准。这样做是出于质量和非功能性的需求。你想要的系统是可维护的，可靠的，可适应的，安全的，可测试的，可扩展的，可用的。实现所有这些质量属性的一个方法就是应用良好的架构设计。你可以在维基百科上了解更多关于质量度量的信息。理论是重要的。实践同等——甚至更加——重要，除非你想成为象牙塔里的架构师。</p>
+<p>4）尝试并了解不同的技术栈：如果想要成为一个更优秀的架构师，这一点是最重要的。尝试（新的）技术栈并且学习它们的优缺点。不同的或新的技术栈会带来不同的设计角度和模式。你无法通过浏览抽象的幻灯片来学习，而应该是通过自己的尝试，并感受其中的痛苦。架构师不仅需要知识的广度，更需要深度——特别是在某些领域内。不需要掌握所有的技术栈，重要的是对你所在的领域中最重要的技术有扎实的理解。此外，尝试一些不属于你的领域的技术。保持好奇心，尝试新事物。也可以尝试一些你几年前不喜欢的东西。</p>
+<p>5）分析和理解应用的模式：看看你当前的任何一个框架。你可以在实践中学习很多模式，例如观察者模式。尝试理解模式是如何应用到框架中的，为什么这么做。如果你够专注，可以深入研究代码，理解它是如何实现的。</p>
+<p>6）保持好奇心并且参加用户小组。</p>
+<h2 id="决策decide">决策（Decide）</h2>
+<p>架构师需要能够做出决策，并引导项目或整个组织朝着正确的方向发展。</p>
+<p>1）知道什么是重要的：不要在不重要的决策和活动上浪费时间。学会抓住重点。应该没有介绍这方面的书籍，只能通过经验的积累以及向经验丰富的人学习。当在评估某件事是否重要是通常会考虑两个特征：</p>
+<ol>
+<li>概念上的完整性：如果你决定用一种方式去做一件事情，那么坚持下去，即使有时候用不同的方式做会更好。通常，这将导致一个更直接的整体概念，简化可理解性和维护</li>
+<li>一致性：假如，你定义并应用命名约定，那么他就不是只关于大小写，而是以相同的方式在任何地方应用它。</li>
+</ol>
+<p>2）优先级：有些决策非常重要。如果早期没有尽早采取措施，项目中会产生一些区域，这些区域通常在以后不太可能被删除，而且对维护来说是一场噩梦，或者更糟糕的是，开发人员只能停止工作，直到做出决定为止。通常在这样的情况下，做出一个“糟糕的”决定会比没有决定好得多。但在这种情况发生之前，先考虑一下对即将做出的决定进行优先级排序。有很多不同的方法可以做到这一点。建议先看看在敏捷开发中广泛使用的加权最短工作优先(WSJF)模型。特别是度量时间的临界性和降低风险对于评估架构决策的优先级是至关重要的。</p>
+<p>3）了解自己的能力：在不属于你能力范围的事情你不应该做决定。这一点至关重要，如果不考虑，它将会严重破坏你的架构师地位。为了避免这种情况的发生，你要向你的同事明确你的职责和你的角色。如果有多个架构师，那么你应该尊重当前部署的架构级别。作为一个较低级别的架构师，你最好为更高级别的架构提出建议，而不是做出决定。此外，建议对关键决策，进行同行评议。</p>
+<p>4）评估多个选项：在做决策时，一定要列出不止一个选择。在大多数案例中，可能的好选择不止一种。只有一个选项是很不好的，这体现在两方面：首先你似乎没有把工作做好；其次，这会妨碍你做出正确的决策。通过定义度量方法，我们可以基于事实而不是直觉来对可选项进行比较。例如license的成本或成熟度。这通常会产生更好、更可持续的决策。更进一步，它还可以方便的将决策推销给不同的利益相关者。此外，如果没有正确地评估选项，在讨论时可能会遗漏一些参数</p>
+<h2 id="简化simplify">简化（Simplify）</h2>
+<p>记住Occam的Razor解决问题原则，它强调简单性。对这个原则的简单解释是：如果你对要解决的问题有太多的假设，那么你的解决方案可能是错误的，或者会导致不必要的复杂解决方案。为了得到一个好的解决方案，需要减少（简化）假设。</p>
+<p>1）调整方案：为了简化解决方案，对方案进行调整并从不同的角度进行审视通常会很有帮助。尝试通过自定向下和自底向上的思考来塑造解决方案。如果你有一个数据流图或流程图，那么首先从左到右思考，然后从右到左思考。问自己这样的问题：“在一个完美的世界中，你的方案会怎样？”或者：”某个公司/某个人会怎么做？“（这个公司可能不是你的竞争对手，而是GAFA（谷歌，苹果，Facebook和亚马逊）公司之一）。这两个问题都会迫使你按照Occam的Razor原则减少假设。</p>
+<p>2）退后一步：经过激烈和长时间的讨论，结果往往是高度复杂的涂鸦。你永远都不要把这些当成最终的成果。退后一步：再次着眼于大局（抽象层次）。问自己，之前的讨论仍然是有意义的吗？然后在抽象层次上重新审视并重构它。有时停止讨论，并在第二天继续这样会很有帮助。至少大脑需要一些时间来处理，并想出更好的，更优雅的，以及更简单的解决方案。</p>
+<p>3）分而治之：通过把问题分解成更小的部分来简化它。然后独立解决它们。然后再验证这些小的问题是否能匹配整体。再退后一步看看整体的情况。</p>
+<p>4）重构并不是坏事：如果找不到更好的方案，完全可以重一个更复杂的解决方案开始。如果这个解决方案给你带来了麻烦，后续可以重新思考解决方案并应用所学到的知识。重构并不是坏事。但是在开始重构前，请记住1）有足够的自动化测试来确保系统的适当功能，2）从相关方获得支持。关于更多重构方面的知识推荐《Refactoring，Improving the Design of Existing Code》（《改进现有代码的设计》</p>
+<h2 id="编码code">编码（Code）</h2>
+<p>即使是作为一个企业级架构师，最抽象层次的架构师，你仍然需要知道开发人员的每天工作的基本情况。如果不明白如何做到这一点，可能会面临两个主要问题：</p>
+<ol>
+<li>开发人员不会接受你的说法。</li>
+<li>你不了解开发人员面对的挑战和需求。</li>
+</ol>
+<p>1）有一个业余项目：这样做的目的是尝试新的技术和工具，以了解当下和未来的开发是如何进行的。经验是观察、情绪体验和假设的结合（Kurt的《软件工程中的经验和知识管理》）。阅读一份教程或一些优缺点会有好处。但这仅仅是书本知识。只有当自己尝试的时候，才能体验到情绪的感受并建立起一件事情是好是坏的假设。你使用一种技术时间越长，你的假设就会越好。这将帮助你在日常工作中做出更好的决定。只有你对主要的趋势有一些经验和粗略的概述，你才能参与到对话中，并把发展引向正确的方向。</p>
+<p>2）找到合适的东西去尝试：你不能尝试所有的东西。这是不可能的。你需要一个更加结构化的方法。(可参考ThoughtWorks的<a href="https://www.thoughtworks.com/radar">Technology Radar</a>)。</p>
+<h2 id="文档document">文档（Document）</h2>
+<p>架构文档有时很重要，有时不那么重要。重要的文档，例如是架构决策或者编码指南。初始文档通常在编码开始之前需要，并且需要不断地完善。其他文档可以自动生成，代码也可以是文档，例如UML类图。</p>
+<p>1）整洁的代码：如果处理得当，代码是最好的文档。一个好的架构师应该能够区分好的代码和坏的代码。参考学习《代码简洁之道》</p>
+<p>2）尽量生成文档：系统变化很快，很难更新文档。无论是关于API还是CMDB（配置管理数据库）形式的系统环境。底层信息的变化往往太快，无法手动更新相应的文档。有很多工具可以做到这一点，例如Swagger和RAML</p>
+<p>3）必要而精简：无论你需要记录什么。例如决策文件，试着只关注一件事情，只包括这一件事情的必要信息。大量的文档很难阅读和理解。附加的信息应该放在附录中。特别是对于决策文件来说，讲述一个令人信服的故事比抛出一大堆论据更重要。这能为你的和你的同事剩下大量的阅读时间。看看你过去做过的一些文档（源代码、模型、决策文件等），然后问自己以下问题：“是否包含了理解它所需的所有信息？”，“哪些信息是真正需要的，哪些可以省略？”以及”文档中是否有红线？“</p>
+<p>4）了解更多有关架构框架的信息：这一点也可应用于所有其他的“技术”点。像TOGAF或Zachmann这样的框架提供的“工具”在文档方面感觉很重，尽管它们的附加价值并不局限于文档。在这样的框架中获得认证将教会你更系统的处理架构问题。</p>
+<h2 id="沟通communicate">沟通（Communicate）</h2>
+<p>这是最被低估的技能之一。如果你在设计方面很出色，但却不能传达你的想法，那么你的想法很可能影响不大，甚至无法成功。</p>
+<p>1）学习如何交流你的观点：当在白班或挂图上合作时，了解如何正确使用它来组织你和你的同事的想法是很重要的。参考《UZMO-Thinking With Your Pen》。作为架构师，通常不仅要参与会议，还需要推动并主持会议。</p>
+<p>2）做大型演说：向一个或大或小的团队展示你的想法对你来说是可行的。如果你对此感到不舒服，开始先向你的好朋友展示，慢慢扩大人群。这是你只能通过行动并且离开个人舒适区来学习的事情。对自己要有耐心，这个过程可能需要一些时间。</p>
+<p>3）找到合适的沟通层面：不同的相关方有不同的利益和观点。他们需要在各自的层面上解决问题。在你交流之前，退后一步，检查你想要分享的信息是否在正确的层面上，包括抽象性、内容、目标、动机等。例如：开发人员通常对解决方案的细节感兴趣，而管理人员喜欢知道哪个选项最省钱。</p>
+<p>4）多沟通：如果没有人知道，再优秀的架构也毫无价值。定期地在每个组织层面上发表目标体系结构及其背后的思想。安排与开发人员，架构师和管理人员的会议，向他们展示所需的或已经定义的方式。</p>
+<p>5）透明：定期的沟通只能部分地缓解透明度的缺失。你需要让决策背后的理由变得透明。尤其是，如果人们不参与决策过程，就很难理解和遵循决策及其背后的原理。</p>
+<p>6）随时准备做演说：总会有人有问题，而你需要立即给出正确的答案。尽量将最重要的幻灯片放在一个统一的集合中，以便展示和解释。这能节省大量的时间，并为你提供安全保障。</p>
+<h2 id="评估estimate-and-evaluate">评估（Estimate and Evaluate）</h2>
+<p>1）掌握最基本的项目管理原则：作为架构师或首席开发人员，你经常被要求对你的想法对实现进行评估：需要多长时间，多少钱，多少人，需要什么技术等。当然，如果你计划引入新的工具或框架，你需要对这类“管理”问题有一个答案。最初，应该能够给出一个粗略的估计，日，月或年。不要忘记，这不仅仅是关于实现，还有更多的活动需要考虑，比如需求工程、测试和修复bug。因此你应该知道所使用的软件开发过程的活动。为了得到更好的估计，一个可行的方法是使用过去的数据，并从中得出预测结果。如果没有过去的数据，可以尝试COCOMO等通用方法。如果在一个敏捷项目中，学习如何正确地评估和计划，参考《Agile Estimating and Planning》</p>
+<p>2）评估“未知”架构：作为架构师，你还应该能够评估架构对于当前或未来环境的适用性。这不是一项容易的任务，但可以在手头准备一组问题，这些问题对于每个体系结构都是常见的。它们不仅是关于架构的，而且是关于如何管理系统的，同时也给你一些关于质量的见解。建议随时准备一些问题，准备好使用。以下是建议：</p>
+<ol>
+<li>设计实践：架构遵循哪些模式？它们是否因此而正确地使用？设计是遵循红线还是不受控制地增长？是否有一个清晰的结构和关注点的分离？</li>
+<li>开发实践：是否有适当的编码指南并遵循？如何对代码进行版本管理，部署时间？</li>
+<li>安全性：采用了哪些安全性概念？内置的安全？渗透测试或自动安全分析工具是否到位并经常使用？</li>
+</ol>
+<h2 id="平衡balance">平衡（Balance）</h2>
+<p>1）质量是有代价的：前文谈到了质量和非功能需求。如果过度使用架构，它将增加成本，并可能降低开发速度。架构师需要平衡架构和功能需求。应避免过度设计。</p>
+<p>2）权衡冲突目标：目标冲突的一个典型例子是短期目标和长期目标。项目往往倾向于构建最简单的解决方案，而架构师头脑中有长期的愿景。通常，简单的解决方案并不适合长期的解决方案，而且有可能在以后被抛弃（沉没成本）。为了避免实施方向错误，需要考虑两件事：</p>
+<ol>
+<li>开发人员和业务人员需要了解长期愿景和鹅他们的好处，以便适应他们的解决方案</li>
+<li>负责预算的经理需要参与进来，以了解对财务的影响。没有必要直接拥有100%的长期愿景，但开发的部分应该适合它。</li>
+</ol>
+<p>3）冲突管理：架构师通常是具备不同背景的多个团队之间的粘合剂。这会导致不同层次间的沟通冲突。为了找到一个平衡的解决方案，同时也反映出长期的战略目标，架构师的角色通常是帮助克服冲突。关于沟通理论的起点可以参考“Four-Ears Model”。在此模型的基础上，可以得出许多结论和推论。但这一理论还需要一些实践。需要在交流研讨会上进行实践。</p>
+<h2 id="咨询consult-and-coach">咨询（Consult and Coach）</h2>
+<p>在咨询和指导时，积极主动可能是你能做的最好的事情。如果有人问题，往往为时已晚。在架构上做清理工作是要避免的。你需要预见未来几周，几个月甚至几年的情况，为下一步做准备。</p>
+<p>1）有远见：如果你部署在一个项目中，无论是传统的瀑布方法还是敏捷方法，你总是需要对你想要实现的中期以及长期目标有一个远景。这并不是一个详细的概念，而是一个面向所有人的路线图。由于你不能一次完成所有的事情（这是一个过程），我们应该使用成熟度模型来考虑。它们提供了一个清晰的结构，可以很容易的使用，并且在每次给出当前进展的状态。对于不同的方面，可以使用不同的模型，例如开发实践或持续交付。成熟度模型中的每个级别都有明确的需求，这些需求遵循SMART标准，以便于度量是否实现了它。</p>
+<p>2）建立一个实践社区（CoP）：在一个共同的利益集团之间交换经验和知识有助于传递思想和标准化方法。例如，每三个月左右，可以将所有JavaScript开发人员和架构师聚集在一个房间里，讨论过去和现在的挑战，以及如何解决它们，或者新的方法。架构师可以分享讨论和调整他们的愿景，开发人员可以分享经验并从他们的同行那里学习。这样的一轮交流，不仅对企业非常有利，对个人也非常有利，因为它有助于建立一个更强大的网络，并传播想法。关于这些方面的观点可以查看SAFe Framework的文章 Communities of Practice，其中解释了敏捷环境下的CoP概念</p>
+<p>3）举行公开会议：误解或歧义的一个来源是缺乏沟通。腾出一个固定的时间，如，每周30分钟，与同事交流热点话题。这次会议没有议程，一切都可以讨论。试着当场解决小事，就更复杂的主题安排后续的工作</p>
+<h2 id="营销market">营销（Market）</h2>
+<p>你的想法很好，也很好地表达了它们，但仍然没有人想要遵循？那么可能缺乏营销技巧。</p>
+<p>1）激励和说服：公司如何说服你购买一个产品？它们证明了它的价值和好处。但不只是5个要点，它们包裹的很好，尽可能容易消化</p>
+<ol>
+<li>原型：展示你的想法的原型，有很多更具可以用来创建原型。</li>
+<li>展示一段视频：除了”无聊的幻灯片“，你还可以展示一段视频，展示你的想法或至少是方向。但请不要过度营销：从长远来看，内容才是王道。如果你的话没有实现，这将长期损害你的声誉。</li>
+</ol>
+<p>2）为你的想法而战，坚持不懈：人们有时不喜欢你的想法，或者他们知识太懒而不去遵循它们。如果你真的被你自己的想法说服，你应该不断去追求它们并“战斗”。有时这是必要的。具有长远目标的架构决策通常不是最容易的：开发人员不喜欢它们，因为它们开发起来更复杂。经理们不喜欢它们，因为它们在短期内更昂贵。然而坚持和谈判是架构师的工作。</p>
+<p>3）寻找盟友：建立或实施自己的想法是困难的，甚至是不可能的。试着找到可以支持并帮助说服他人的盟友。使用你的社交网络，如果还没有，现在就开始构建。你可以从和你的（思想开放的）同伴谈论你的想法开始。如果它们喜欢你的想法，或者至少喜欢其中的一部分，那么当别人问起这个问题的时候，它们很可能支持你的想法（“某某的想法很有趣”）。如果他们不喜欢，问问原因：也许你错过了什么？还是你的故事不够有说服里？下一步是找到有决定权的盟友。请求一次开放性的讨论。如果你害怕讨论，记住有时候你需要离开你的舒适区。</p>
+<p>4）重复，相信：研究表明，反复接触一种观点会让人们相信这种观点更流行，即使这种观点的来源只是一个人。如果你发布的信息足够少，你就更容易说服人们。但请注意：这种策略应该被明智地使用，因为它可能会弄巧成拙变成一种糟糕的营销策略而适得其反。</p>
+<h1 id="参考资料">参考资料</h1>
+<ol>
+<li><a href="https://github.com/justinamiller/SoftwareArchitect">SoftwareArchitect</a></li>
+<li><a href="https://github.com/AlaaAttya/software-architect-roadmap">Software architect roadmap</a></li>
+</ol>
+
+
+                
+                
+<div class="entry-shang text-center">
+    
+	    <p>「真诚赞赏，手留余香」</p>
+	
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
+</div>
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="https://chenying.com"><img src="/img/favicon.png" />ChenYing Blog</a></span>
+        
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="100">100元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
+	</div>
+</div>
+<script type="text/javascript" src="/js/reward.js"></script>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/my_first-post/" data-toggle="tooltip" data-placement="top" title="vnpy策略开发试验">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        <a href="/tags/tag1" title="tag1">
+                            tag1
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/tag2" title="tag2">
+                            tag2
+                        </a>
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+                <section>
+                    <hr>
+                    <h5>FRIENDS</h5>
+                    <ul class="list-inline">
+                        
+                        <li><a target="_blank" href="https://yingchen1991.github.io">Friend的博客</a></li>
+                        
+                    </ul>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="ChenYing Blog" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+                   
+                    
+                    <li>
+                        <a href="mailto:youremail@gmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+
+                    
+                    
+                    
+
+                    
+
+		    
+                    
+                    <li>
+                        <a target="_blank" href="/your%20wechat%20qr%20code%20image">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-wechat fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/yourgithub">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/yourlinkedinid">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://stackoverflow.com/users/yourstackoverflowid">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+            
+                    
+                    
+                    
+            
+            
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; ChenYing Blog 2021
+                    <br>
+                    
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+</body>
+</html>

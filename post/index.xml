@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on ChenYing Blog</title>
+    <link>https://chenying.com/post/</link>
+    <description>Recent content in Posts on ChenYing Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 07 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://chenying.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>漫谈职业发展规划</title>
+      <link>https://chenying.com/post/2021-03-07-talk-about-architect/</link>
+      <pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenying.com/post/2021-03-07-talk-about-architect/</guid>
+      <description>摘要 通常来说软件架构师与现实生活的架构师很像。他要负责制定高层次的设计决策。 本文的目标是对软件工程师提升为软件架构师所需要的技能做一个粗略的</description>
+    </item>
+    
+    <item>
+      <title>vnpy策略开发试验</title>
+      <link>https://chenying.com/post/my_first-post/</link>
+      <pubDate>Tue, 04 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenying.com/post/my_first-post/</guid>
+      <description>摘要：本次试验尝试采用vnpy量化交易系统进行简单的策略开发。本次试验选择最简单的双均线策略作为目标，试验目的是熟悉vnpy的策略开发模块的</description>
+    </item>
+    
+  </channel>
+</rss>
