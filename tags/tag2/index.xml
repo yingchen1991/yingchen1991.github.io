@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>tag2 on ChenYing Blog</title>
+    <title>tag2 on ChenYing&#39;s Blog</title>
     <link>https://yingchen1991.github.io/tags/tag2/</link>
-    <description>Recent content in tag2 on ChenYing Blog</description>
+    <description>Recent content in tag2 on ChenYing&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 07 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://yingchen1991.github.io/tags/tag2/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://yingchen1991.github.io/tags/tag2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>并发编程</title>
+      <link>https://yingchen1991.github.io/post/2021-05-01-concurrent-programming-practices/</link>
+      <pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://yingchen1991.github.io/post/2021-05-01-concurrent-programming-practices/</guid>
+      <description>Java并发编程实战 当设计线程安全的类时，良好的面向对象技术、不可修改性，以及明晰的不变性规范都能起到一定的帮助作用。 在并发编程中，这种由于</description>
+    </item>
+    
     <item>
       <title>漫谈职业发展规划</title>
       <link>https://yingchen1991.github.io/post/2021-03-07-talk-about-architect/</link>
