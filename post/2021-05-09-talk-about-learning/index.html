@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="ChenYing&#39;s Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://yingchen1991.github.io/img/home-bg-jeep.jpg">
+    <meta property="twitter:image" content="https://yingchen1991.github.io/img/home-bg-jeep.jpg" />
+    
+
+    
+    <meta name="title" content="学习之道" />
+    <meta property="og:title" content="学习之道" />
+    <meta property="twitter:title" content="学习之道" />
+    
+
+    
+    <meta name="description" content="陈英，程序员, 开源爱好者，生活探险家 | 这里是 陈英 的博客，与你一起发现更大的世界。">
+    <meta property="og:description" content="陈英，程序员, 开源爱好者，生活探险家 | 这里是 陈英 的博客，与你一起发现更大的世界。" />
+    <meta property="twitter:description" content="陈英，程序员, 开源爱好者，生活探险家 | 这里是 陈英 的博客，与你一起发现更大的世界。" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="陈英, chenying, ChenYing, , 陈英的网络日志, 陈英的博客, ChenYing&#39;s Blog, 博客, 个人网站, 互联网, Web, 云原生, PaaS, Istio, Kubernetes, 微服务, Microservice">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>学习之道-陈英的博客 | ChenYing&#39;s Blog</title>
+
+    <link rel="canonical" href="/post/2021-05-09-talk-about-learning/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">ChenYing&#39;s Blog</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/tech">tech</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/books/">BOOKS</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search">SEARCH <img src="/img/search.png" height="15" style="cursor: pointer;" alt="Search"></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-jeep.jpg')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/tag1" title="tag1">
+                            tag1
+                        </a>
+                        
+                        <a class="tag" href="/tags/tag2" title="tag2">
+                            tag2
+                        </a>
+                        
+                    </div>
+                    <h1>学习之道</h1>
+                    <h2 class="subheading">读书笔记</h2>
+                    <span class="meta">
+                        Posted by 
+                        
+                                 &#34;ChenYing&#34;
+                         
+                        on 
+                        Sunday, May 9, 2021
+                        
+                        
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <header>
+                    <h2>TOC</h2>
+                </header>
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#摘要">摘要</a></li>
+  </ul>
+</nav>
+                
+                <h1 id="摘要">摘要</h1>
+<p>我这一辈子都在不断的学习。尤其在我读研究生的阶段，领悟了人生活到老学到老的真谛，从此下定决心这辈子只有学到老，才能活到老。人生是一场试炼，目标是不断的精进自己的技能。学习也是一样，不断学习学习的技能，不断领悟学习的真谛，不断提升学习的技能。以下是阅读《学习之道》所做的读书笔记。试图将书中的核心内容列举出来，以便可以架构出整本书的框架体系，可以真正掌握学习之道的全貌。</p>
+<p><strong>无心之举</strong></p>
+<p>培养兴趣，保持好奇心</p>
+<p>通过提问的方式，放慢速度</p>
+<p><strong>转败为胜</strong></p>
+<p>位置太高带来的问题是失败的路会很长</p>
+<p>远离激烈竞争与压力的短期旅行将成为取得成功不可或缺的一部分</p>
+<p>不断加大训练强度</p>
+<p>专注力训练</p>
+<p><strong>整体理论与渐进理论</strong></p>
+<p>大师与普通人的差距？</p>
+<p>比赛的意义？</p>
+<p>既然会失败，为何还要追求卓越？</p>
+<blockquote>
+<p>首先，有的人能挤进高高在上的王者之位，二大多数人只能望而兴叹，其中的差别到底在哪？</p>
+<p>第二，比赛的意义何在？如果野心会带来失望，那为什么还要一如既往去追求卓越呢？</p>
+<p>这两大问题的答案源于一种经过深思熟虑的方法，它能激励弹性，能够将多样化的追求与每天对于过程的享受联系在一起。绝大多数有追求的人，不管年长还是年幼，在学习方法上都犯下了很可怕的错误。他们沮丧地偏离了主道，而那些走在成功道路上的人却始终沿着正确的轨迹稳步行进。</p>
+</blockquote>
+<p>整体理论：采取这种思维的人，倾向于用这样的语言：“我在这方面很聪明，”并将成败归结于一种与生俱来、无法改变的能力水平。他们把自己的综合智力或技能水平看成是一个固定的、无法继续演变的“整体”。</p>
+<p>渐进理论：更倾向于用这样的句子描述结果：“我之所以做到了是因为我非常刻苦”，或者“我应该更努力一点才是”。采取这种思维的人倾向于这种想法，即，世上无难事，只怕有心人，通过努力，一步一步，循序渐进，新手也能成为大师。</p>
+<p>很明显，父母和老师在子女、学生智力理论的形成过程中承担着极大的责任——无论何时做改变都不算晚。必须要意识到这样一点：我们的学习方法是可以一直改进的。</p>
+<p><strong>追求卓越的关键在于，要坚持充满活力、长期的学习过程，不再满足于原地踏步、平平庸庸。</strong></p>
+<blockquote>
+<p>成功之士一心追求卓越，每场战斗都勇敢承担风险，最终你就会发现，在“追求卓越”的过程中获得的教训比唾手可得的奖杯和荣耀有意义得多。从长期来看，痛苦的失败比获胜更有价值。拥有健康的心态，能够从每次经历（不论好坏）中有所心得，这样的人才能一路走下去，并且一路都能走得很开心。当然，<strong>真正的挑战是，面临着危险或在战斗中受了伤，如何能继续保持这种长期视角。这一点，或许也是我们最大的障碍，恰恰就是学习艺术的核心所在。</strong></p>
+</blockquote>
+<p>让自己稳步前行的是对学习的热爱。</p>
+<p><strong>爱上学习</strong></p>
+<p>无论是在哪个行业，体育也好，商业谈判乃至总统选举辩论也罢，对于一个顶级对手而言，最关键的优势之一就是掌控全局基调的能力。</p>
+<p>培养“头脑马拉松”能力</p>
+<p>如何平衡长期过程于短期目标以及不可避免的挫败？</p>
+<p>关键一点是：心态要健康</p>
+<p>针对努力而不是结果做出反馈，失败是成功之路不可或缺的一部分。总结失败经验在长期学习过程中，将问题作为一个短期目标——形成健康的反省处理机制。</p>
+<p>要承担责任，培养一种健康、自由的思维方式。</p>
+<p>唯有推动自我，探寻自身能力的极限，我们才会收获，才会进步。</p>
+<p>直面未知</p>
+<p><strong>软区域</strong></p>
+<p>要避免突发的状况而分心</p>
+<p>在行为训练中，首先要学着心平气和对待一切已发生的事；之后，我们要学着将这些事情为我所用；最后，我们要学着做到完全自给自足，创造出我们自己的地震，这样我们的思维过程可以自己创造突破性创新想法，而无需通过外因刺激。</p>
+<p>第一步就是要达到“软区域”。将这个区域想象成你的表现状态，培养随意走进这一区域的能力</p>
+<blockquote>
+<p>你正在专心做手头上的事，可能是一段音乐、一份法律文案、一份财务文件，或者是在开车，接着发生了一件事。比如你的配偶回家了，你的小宝宝醒了并开始哭闹，你的老板打电话给你提出了不合情理的要求，或者一辆卡车在你面前爆炸了。</p>
+<p>你的专注状态的本质会决定你的第一阶段的反应：如果你很紧张，用手捂着耳朵，整个身体紧绷起来，想阻止自己分心，这样你就进入了一个“硬区域”，即，要求有一个合作的空间让你正常工作。你就像一段干树枝，非常脆，随时都会在压力下爆裂。</p>
+<p>你要做的就是，静静地、高度专注，看起来很放松，脸上的表情很沉稳，但精神世界却是激流暗涌。你平静接受眼前的事，将生命中每一圈涟漪都融入自己创新思维过程中去。这个“软区域”弹性十足，就像柔韧的草叶，在劲风中左右摇摆，以顽强的生命力幸存下来。</p>
+<p>。。。</p>
+<p>寓言</p>
+<p>有个人想步行穿过大陆，但路上布满了荆棘。他有两个选择：一是铺一条路，征服大自然；二是做一双草鞋。</p>
+<p>做草鞋是内心的解决方案。想“软区域”一样，它不是将成功建立在一个“服从于他”的世界或一种无法抗拒的力量之上，而是建立于才智的准备与坚韧的意志力之上。</p>
+</blockquote>
+<p>训练自己，让自己的注意力更具灵活性</p>
+<p>对这类的状况的解决方案不应是否定自己的情绪，而是将其为我所用。不去压抑自己的情感，而是将其导向高度专注。</p>
+<p>训练思维灵活性，不断寻找新方法，让自己在心理上越来越刀枪不入。</p>
+<p>当感觉不舒服时，让自己不要避开这种不舒服，而是淡定地对待；当受伤时，尽量不吃止疼药，而是努力将疼痛转为一种积极的感受。</p>
+<p>训练自己的本能，寻求挑战，而不是避开难题。</p>
+<p>冷静地对待混乱、不清晰的局面，训练就存在于日常生活中。</p>
+<p><strong>漩涡效应</strong></p>
+<p>连续犯下错误以后恢复清醒的头脑的重要性，</p>
+<p>犯第一个错误并不会导致可怕的后果，但接踵而来的犹如漩涡一样的一个接一个的错误却会导致灾难性的后果。</p>
+<p>当情绪波动使你变得盲目的时候，要懂得驾驭情绪波动并找回自己前行的动力</p>
+<p>当你清醒的意识开始变得模糊的时候把它拉回沉着冷静的状态。</p>
+<p>学会把握犯错误的时刻，让错误为我们所用，用自己的即兴发挥来提升自己的水平</p>
+<blockquote>
+<p>人会习惯性地呆在之前的情感舒适区域，可是也会产生一种令人不安的预感，事情已经变得越来越糟糕了。这就如同一个最明智的思想家突然之间陷入了自己与自己的战争中，失去了如流水般流畅的思考。</p>
+</blockquote>
+<p><strong>改变本能反应</strong></p>
+<p>把自己在比赛中的情绪波动都记录下来，试图去解释，在一场接着一场的比赛中，精神上的紧张程度是如何随着比赛局势发展的紧张而节节攀升，</p>
+<p>一个小小的错误通常反映出各式各样的精神上的崩溃。一场既定的比赛中，都会一直反复地出现一种精神上的紧绷，然而开始引起注意的是，在比赛上翻下的错误经常会以其他的方式出现在比赛以外的生活中。</p>
+<p>在比赛中，当双方的对峙发生性质上的改变时，先做深呼吸使自己头脑变得更加敏锐。而现实生活中致力于去接受变化，而不是与之抗衡。</p>
+<p>借助某项东西，挖掘出自身最难以捉摸的弱点，这个心理学上的主题包含一系列的内容，例如各种过渡性的转变，能够复原的专注力，意识到流动性，控制力，对未知事物的迅速转换，对高压的忍受能力，漩涡效应，当身体或者心理感觉不适的时候要保持头脑冷静，忍受疲劳感，情绪的波动。无论何时当自己发现一个缺点，都积极的接受它。</p>
+<p><strong>驯服野马</strong></p>
+<p>学习和表演之间的领域就是一个灰色的探索地带，有一种平衡的力量在不屈不挠地驱使着你，却又不会太猛烈以至于把你融化了。肌肉和思想一样都需要通过不断拓展自己才能够发展，然而如果抻得太长就会有断掉的危险。一个竞赛者必须要以过程为指向，总得去寻找更加强大的对手来刺激自己成长，但是通过赢得胜利来维持自信也是非常重要的。有时候我们不得不放弃现有的一些观点来吸收更多新的知识，却绝对不能放弃太多我们独一无二的内在天赋。必须用实际的战术意识来改造朝气蓬勃的、有创造力的理想主义。</p>
+<p><strong>第二领域</strong></p>
+<p><strong>初学者</strong></p>
+<p><strong>以退为进</strong></p>
+<p>为了有所成长，需要舍弃现在的思维方式，需要学会先输后赢。</p>
+<p>以退为进可以让你参与到学习过程中去</p>
+<p>如果一个受过训练的人可以避免再次犯同样的错误——不管是技术上还是心理上——他就可以成为某个领域的佼佼者。当然，这种事情是不可能的——我们注定要重复犯某些关键性错误，但愿是因为这些错误都难以逃避，并且很难准确定位的。。。所以我们的目标就是要通过观察各种心理上和技术上的错误来尽量减少它们的发生。</p>
+<p>（让自己保持极度透明）</p>
+<p>处在初级阶段的学习者不可避免地会比较容易受到伤害。你一定要意识到这一点，从而让自己在受到保护的阶段中不断成长。如果一个年轻的运动员被期望在使用这种新体制的头几场比赛中就表现出色的话，他注定会很失望。在他进步之前他需要时间来吸收这些新的技巧。</p>
+<p>当你还是个初学者时，要保持初学者的思维并且愿意以退为进并不是多么困难，但是当人们都在看着你，期待你的表现时，要仍然保持谦虚和乐于学习就要难得多了。</p>
+<p>我们必须允许我们并不总处在最佳状态。我们必须对自己负责，而不是期待别人来理解我们为了发挥出最佳水平时所要做的事情。伟人在一次次磨炼中乐意承受挫折。</p>
+<p><strong>划小圈</strong></p>
+<p>学习的基本原则就是要钻研微观的细节事物从而来理解是什么促成了这些宏观上的问题。</p>
+<p>我们面对的阻碍就是我们生活在一种关注度不足的文化里。</p>
+<p>我们面对来自电视、收音机、收集、视频游戏以及网络的各种信息。这种不断的刺激有可能会让我们逐渐上瘾，不停地想去追求新事物，不停地取悦自己。当没有新鲜有趣的事物时，我们可能就会感到无聊，无法集中注意力。所以我们就去寻找心的娱乐项目，搜索各个频道，翻阅各种杂志。如果有了这种生活节奏，那我们就像是浅水的小鱼，不知下面还有绚丽的海底世界。</p>
+<p>每个人都紧赶慢赶地想多学点，但都学得不深。学的东西花哨但很肤浅，不剧本稳固的身体机能或是原则基础。所学的东西都是初级知识，结果就只是一个招式的收集者，光会踢踢腿，摆几个姿势，完全没有武术价值。</p>
+<p>用数字摆脱数字</p>
+<p><strong>把大的东西分解成各个细节的东西，挖掘技能的实质所在，然后有效地压缩技能的外在表现同时又仅仅围绕技能的内在实质。一段时间后，广度就会慢慢缩小而力量则会逐渐增加。把这种方法叫做“划小圈”</strong></p>
+<p><strong>我们能成为顶尖选手并没有什么秘诀，而是对可能是基本技能的东西有更深的理解</strong></p>
+<p>每天都要学得更深一点而不是更广一点，因为学的更深可以让我们潜力中那些看不到、感受不到但又极具创造力的部分挖掘出来。</p>
+<p><strong>化困境为优势</strong></p>
+<p>一个能随机应变的表演者在混乱的情况下要做到处事不惊有三个重要步骤。第一，我们要学会平静对待生活中不完美之处。（树叶在飓风中摇摆和枯脆的树枝在重压下折断）第二，我们的表演训练中，我们如何把不完美之处转换成我们的优势——举个例子，想着音乐的节奏或是利用一个左摇右摆的世界来作为锻炼洞察力的催化剂。第三步隶属于表演心理学，就是学习如何在我们的意识中制造一些起伏的小的波动来激励我们前景，所以我们要一直激励自己，不管外部条件是否有激励性。</p>
+<p>当你想要做到最好时，你需要一种全神贯注并善于搜寻的思维模式。你需要利用阻碍来刺激你在学习过程中创造新的视角，让挫折来磨炼你的意志。比起屈服于这些挫折，你应该更好地应对受伤或是失败。</p>
+<p>我们太容易被我们的日常生活方式所桎梏，从而在学习过程中失去创造性。即使那些一心一意想培养出某种原则的人都经常会落入一个思维定律和一种闲散的生活方式，被暗示经过这些事物就会追求到卓越。我们失去了风采。于是一旦受伤或是遇到一些别到挫折就会阻碍我们的发展。我们被逼着进行创新</p>
+<p>最终，我们应该学习如何在不用受伤的情况下也能吸取这种经历的教训：一个篮球运动员应该练几个月的左手技能来平衡在运动中的表现。一个喜欢用右脚的足球运动员不应该一直只用右脚射门。一旦我们学会了如何把困境转化为优势，我们就可以制造有用的成长机会而又不至于带来真正危险或伤害。我们称这种工具为“内在解决措施”——我们能够注意到那些促成有用的成长或是带来表现机会的外部事件，即使这些事情没有真实发生，我们也可以吸收这些事件的结果。这样一来，困境就变成了激励创造性的一个无穷的源泉。</p>
+<p><strong>让时间慢下来</strong></p>
+<p>意识思维虽然很重要，但只能在特定时候吸收并和特定数量的信息联合发挥作用——想象能力就是电脑屏幕上的一页白纸。如果有许多信息要同时展示，那字体就要变得很小才能把所有信息都写在这页百纸上。这样一来你就无法看到这些字母的细节了。但如果同样的工具（意识思维）被用来在同样的一段时间里呈现较少数量的信息，那我们就能看到每个字母的细节所在。于是时间就感觉慢下来了。</p>
+<p>时间之所以感觉到变慢了是因为我们会本能地把注意力集中在一小块重要的信息上，这样我们的处理器就可以当它是以大字体显示那样对其进行分解。这种训练有素的思维状态共享这个意识的重点小区域。区别就在于，在我们的选择准则中，我们通过把所有周围的信息转变成非意识到统一数据而不是通过忽略它来培养这种经验。</p>
+<p>人类的思维很少进入到这个具有较高认知领域的原因是：如果一个没有经过训练的斗士把所有的能量都集中在他对手的呼吸方式或让人讨厌的眼睛上的话，那对方就会痛击他的脸，把他打倒在地。</p>
+<p>在多数场合，我们应该注意一下发生在我们周围的事情，而且我们的处理器就承担着处理这种事情的责任。另一方面，如果我们知道直觉是如何鹅运行的话，那我们就可以通过训练自己在我们的重心准则中塑造拥有巨大能量的认知能力和身体能力。当然，关键还是在于不断地练习。</p>
+<p><strong>揭开神秘的面纱</strong></p>
+<p>最精深的技巧往往建立在最简单原始的原理之上。</p>
+<p><strong>万物合一</strong></p>
+<p><strong>自在从容的力量</strong></p>
+<p>在每一个领域，区分强者与弱者的标准很大程度上取决于在危机关头是否能够保持清醒的头脑，保持冷静，从容自如。在比赛中，对抗的态势是相当明显的。如果一个选手表现得从容不迫，而另一个选手已经开始被心理因素摧垮，那么比赛的结果已经不言而喻了。</p>
+<p>被掠者已经不能客观从容地应对时，会出现一次又一次的失误，掠杀者此时就能步步紧逼出杀招了。更微妙的是，这种心理战术或许对需要独立完成对比如写作、绘画、学术思考或研究来说更为重要。在没有外部推动的情况下，我们必须成为我们自己的监督者，有多从容成了最好的标尺。如果我们只以“度过此生”来作为生活的标准，那么永远都不能指望杰出。而另一方面，如果发自内心深处且灵活的从容成为了习性，那么生活、艺术和学习将会变得丰富多彩，而这种丰富多彩能带给你不断的惊喜和愉悦。</p>
+<p>那些高人一筹的人都是能将创造潜力发挥到极致的人。对那些生活的强者来说，从容应对每天的学习过程的心理就如同他人梦想着在危机时分能体验最高潮瞬间的那种执着。</p>
+<p>每件事情都会有面临危机的可能。在实际生活中我们越从容，就意味着在比赛中，在董事会上，在考试中，在手术台上，在更大的舞台上我们就能把从容这一品质发挥得更好。如果我们还想追求卓越，那么我们就必须适应自我激励和控制的生活方式。从容应对所发生的一切，想呼吸一样自如。</p>
+<p><strong>释放压力</strong></p>
+<p>在你的表现训练里，掌握这个领域的第一步就是要练习面对和释放压力两者间的此消彼长。这可能会涉及间歇性训练。</p>
+<p>制定一个有规律的休息间隔。随着你的练习，增加你的运动的强度和持续时间，慢慢压缩休息的时间，你就步入正轨了！相同的方法可以运用于慢跑、举重、武术训练或是其他任何体育项目。</p>
+<p>如果确实想提高表现，建议把面对和恢复压力的节奏糅入生活的方方面面。</p>
+<p>打破我们人生种种经历中人为制造的障碍，那么所有的时刻都因相互间的关联而变得丰富多彩。若你在读书而目光涣散，把书放下，深呼吸，拿起书，立即双眼有神。若你在工作中发现自己大脑呆滞，没有活力，休息一会，洗把脸，回来就面目全新。一天花几分钟做一些简单的思维练习，随着一呼一吸，大脑也一张一弛，这可是个不错的主意。这将帮助你把身体的间歇性训练和大脑的运转联系起来。若你对这样的经历乐在其中，你会慢慢地建立起自己的精神活力，并乐意在此花更多时间。</p>
+<p>我们在日常生活中释放压力，过后身心都底气十足的能力会越来越强，我们在集中注意力、调节兴奋度、体力运用和放松自我之间能游刃有余，充满自信。放松就是一眨眼功夫，</p>
+<p>除了能增加你身心的活力，这也向你开启了一些美妙的、令人惊奇的窗户。一方面，现在清醒的头脑能自由地小憩，有创造力的思想从你无意识的头脑中冒出来的时候你会兴奋不已。你会变得更适应你的直觉，会慢慢地在风格上更忠于自我。无意识的脑袋是一个大有潜力的工具，怎样在压力下放松则是挖掘这一潜力的关键的第一步。</p>
+<p>要成为一个细水长流、有长足发展的表现者，间断性工作起着举足轻重作用。如果你在日常生活中花几个月来练习面对和释放压力，那么你会成为一个临危不惧、活力四射、为人所信赖的选手，下一步就是激发你的最佳状态。</p>
+<p><strong>激发最佳状态</strong></p>
+<p>通常情况下，我们生活中的高潮时刻是跟随在非高潮的、正常的和单调的许多时时刻刻、日日夜夜、岁岁年年。那么当我们人生的高潮时刻突然来临时，我们该如何阔步上前，勇敢面对呢？</p>
+<p>我们不仅必须善于等待，还必要享受等待。因为等待不仅仅是等待，它还是生活。我们中的许多人生活着，却没有全心投入。当我们真实的生活开始时，却一味等待。在无聊中打发日子，但这也没关系。因为当真爱来临或我们发现来自心灵深处的呼唤时，我们便开始自己真正的生活。当然令人悲哀的事实无外乎如果我们没有意识到那一刻，即使真爱来了又走，我们仍然没有察觉。我们因此也就成了另外一个人，而非拥抱那个时刻的你或我。</p>
+<p>我崇尚简单，深入到平凡之处中，发现隐藏于生活之中的丰富才是成功还有幸福的所在。</p>
+<p>如果你极度期盼那决定你命运的时刻，那么当它真正来临时你会因兴奋和不安而过度紧张。为了在危急时刻获得胜利，你需要将几种健康生活方式与你每天的生活结合在一起。通过这种做法，当你面临压力时，就可以应对自如了。当我们真的做到水滴石穿时，不断成长的真正力量才会发挥作用和影响。当一切事物处于险境，我们只需像水般不断流动。</p>
+<p>进行固定修炼，在固定修炼与在它之后发生的活动之间建立一种心理联系。一旦这套固定修炼被内化，它就可以被用于任何活动之前，一种相似的心理状态也将出现。个人的固定修炼应该由个人品位决定。</p>
+<p>下一步要做的便是逐渐调整固定修炼，使它比原来简短但却有同样的心理作用。这样的席位调整是为了让“板机”使用更少的辅助材料并且更加灵活。关键是缓慢增加这些变化调整，这样固定修炼的最后的版本与其原来的样子就能做到相似多于差异。即使准备时间稍稍变短，身体和精神也会有同样的心理反应。</p>
+<p>此类精简方法的好处当然不局限于职场或赛场。如果你拯救碍事一辆汽车穿过马路或正在做其他平常的事情，突然面对潜在的危险状况，倘若你受过训练可以在短时间内表现出最佳状态，那么你会在令人毛骨悚然的处境中，毫发无伤地脱险。但是，比在这些极少发生的精彩瞬间更加重要的是精简固定修炼能在提高你的生活质量方面创造奇迹。一旦一次简单的吸气可以激发无穷的敏捷度，我们每时每刻的意识都会变得愉悦，就仿佛是几乎失明的人第一次带上眼镜时所感受到的幸福。</p>
+<p>我们走在街上会看到更多的事物。每一天都变得异常美妙。当我们很自然地沉浸在“平凡”中的可爱的细微之处，无聊这个词变得很遥远也很荒唐。所有的经历与我们新的视野交织在一起，然后新的联系便开始出现了。</p>
+<p>城市街道上雨水的流动将会教会一个画家如何流畅地绘画。一片随风飘落的叶子将会教会一位支配者如何学会放手。家里的小猫教会我如何移动。所有运动时刻都在发生着变化。存在本身教会了我们如何生活。</p>
+<p><strong>化情绪为力量</strong></p>
+<p>做过布满荆棘的路，我们可能会双脚鲜血直流，也可以选择做一双鞋。</p>
+<p>愤怒，恐惧，绝望，兴奋，幸福，失望，希望，情绪是我们生活的一部分。否认经历中如此重要的组成部分，只会让我们变成傻瓜。但是，当我们完全被情绪驾驭的时候，事情会变得糟糕。如果恐惧吧我们撕成了碎片，我们可能在非常危险的环境中无法有效应对。如果我们因他人的刺激而变得暴怒，就可能会做出令自己后悔的决定。如果我们因情况好转而沾沾自喜，也许就会犯下让状况急转直下的错误。</p>
+<p>请记住此次描述的对于可复原的独立的竞技状态至关重要的三个步骤。第一，学会随着分散注意力的事物流动，就是树叶向风儿低头。然后学会利用那些令你分心的事物，用那些原本会让你输掉比赛的事物来激励自己。最后，学会在内心深处再创造出激发斗志的环境。我们要学会为自己做鞋。</p>
+<p>我们必须学会有效地利用自己情绪的爆发点。不应该被愤怒控制或否认自己的愤怒，而是必须从某种程度上将愤怒引导到一种极度全神贯注的状态。</p>
+<p><strong>首先，必须要认清问题是出在谁身上，世上总有讨厌的人，而我必须学会怎样以冷静的头脑应对。愤怒失控会让自己的人生止步不前。</strong></p>
+<p>必须培养当别人把自己推向极限时能够正视并挑战自己的技术弱点，而不会退缩不前，也不会以自我保护的姿态应战。</p>
+<p>成功的唯一方法便是承认现实，超越现实，鼓起勇气并善用之。</p>
+<p>我们必须有事事并非完美的心理准备，如果我们单纯依靠冷漠，抑或是某种思维定势的重复，那么当压力大到无法承受或事疼痛剧烈到不能忍受时，我们的理想的竞技状态将不复存在。</p>
+<p>如何在身边没人可以为你提供推动力时发挥最佳状态？没有普遍使用的统一规则</p>
+<p>可通过下面这个过程找到属于自己的那种独特方法。首先，要培养自己的“软区域”，我们要能够适应自己的情绪，观察它们，研究它们，了解如何让它们自然地宣泄，学习如何利用它们来激发自己的创造力。然后我们就将弱势转化成优势，直到我们不再否认自己内心情绪的爆发，勇气将提升我们的比赛状态，恐惧使我们产生警觉，愤怒将让我们更加专注。然后，我们要找到哪一种情感状态可以激发最佳竞技状态。这是因人而异的问题。</p>
+<p>一些人在热情洋溢的时候会非常具有创造性，另一些人可能会在郁闷的时候表现奇佳。人人都不同。要内省。发现什么状态最适合你，制造能够引发你最佳状态的因素，这样你就能随心所欲利用它来激发自己的潜能。</p>
+<p><strong>万物合一</strong></p>
+<p>最优秀的艺术家和运动员善于调整自己的心态，发挥自身的优势，同时控制竞争中的局势，使其符合自己的特点。</p>
+<p>我们都在某些方面非常擅长，并且在压力下工作。但是怎样变得比别人优秀？怎样迈出从技术性上的娴熟到独特的创造力的这一步呢？</p>
+<p><strong>只有当我们的工作超越熟练阶段而成为自身的一种表达的时候，学习才能为一门真正的艺术</strong></p>
+<blockquote>
+<p>划小圈：以一个简单的技术或想法为例，不断地实践直到感觉到它的精华所在。然后慢慢地精简这些，同时保持它们的力量，知道我们有了极其强大的能力和基本上无形的武库。</p>
+<p>让时间慢下来：选择一组技艺，内化它们，知道大脑感知到无穷的细节。以这种方式训练以后，我们能在同样的时间段里看到更多的画面，这样一来，时间仿佛也慢了下来。</p>
+<p>揭开神秘的面纱：我们把有关对手的细节都放大都清晰可辨的程度，</p>
+<p>这种学习方法的美妙之处就在于我们一旦感受到技术磨炼的博大精深，无论技巧多么细微，我们都能把这种感受当作指路灯塔，照亮我们继续前进的道路。只要你知道什么叫做好，你就有了目标并不断地追寻。</p>
+</blockquote>
+
+
+                
+                
+<div class="entry-shang text-center">
+    
+	    <p>「真诚赞赏，手留余香」</p>
+	
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
+</div>
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="https://yingchen1991.github.io"><img src="/img/favicon.png" />ChenYing&#39;s Blog</a></span>
+        
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="100">100元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
+	</div>
+</div>
+<script type="text/javascript" src="/js/reward.js"></script>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/2021-05-01-concurrent-programming-practices/" data-toggle="tooltip" data-placement="top" title="并发编程">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        <a href="/tags/tag1" title="tag1">
+                            tag1
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/tag2" title="tag2">
+                            tag2
+                        </a>
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+                <section>
+                    <hr>
+                    <h5>FRIENDS</h5>
+                    <ul class="list-inline">
+                        
+                        <li><a target="_blank" href="https://yingchen1991.github.io">Friend的博客</a></li>
+                        
+                    </ul>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="ChenYing&#39;s Blog" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+                   
+                    
+                    <li>
+                        <a href="mailto:youremail@gmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+
+                    
+                    
+                    
+
+                    
+
+		    
+                    
+                    <li>
+                        <a target="_blank" href="/your%20wechat%20qr%20code%20image">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-wechat fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/yourgithub">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/yourlinkedinid">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://stackoverflow.com/users/yourstackoverflowid">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+            
+                    
+                    
+                    
+            
+            
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; ChenYing&#39;s Blog 2021
+                    <br>
+                    
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+</body>
+</html>

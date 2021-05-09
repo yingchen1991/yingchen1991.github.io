@@ -6,7 +6,16 @@
     <description>Recent content in tag1 on ChenYing&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 01 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://yingchen1991.github.io/tags/tag1/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://yingchen1991.github.io/tags/tag1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>学习之道</title>
+      <link>https://yingchen1991.github.io/post/2021-05-09-talk-about-learning/</link>
+      <pubDate>Sun, 09 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://yingchen1991.github.io/post/2021-05-09-talk-about-learning/</guid>
+      <description>摘要 我这一辈子都在不断的学习。尤其在我读研究生的阶段，领悟了人生活到老学到老的真谛，从此下定决心这辈子只有学到老，才能活到老。人生是一场试炼</description>
+    </item>
+    
     <item>
       <title>并发编程</title>
       <link>https://yingchen1991.github.io/post/2021-05-01-concurrent-programming-practices/</link>
